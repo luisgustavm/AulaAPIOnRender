@@ -7,6 +7,18 @@ builder.WebHost.UseUrls(
     $"http://0.0.0.0:{Environment.GetEnvironmentVariable("PORT") ?? "8080"}"
 );
 
+// CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
@@ -26,6 +38,9 @@ builder.Services.AddOpenApi(options =>
 });
 
 var app = builder.Build();
+
+// CORS antes dos endpoints
+app.UseCors("AllowAll");
 
 app.MapControllers();
 app.MapOpenApi();
