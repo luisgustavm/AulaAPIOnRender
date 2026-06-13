@@ -45,6 +45,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/aulaapionrender:latest
-            ${{ secrets.DOCKER_USERNAME }}/aulaapionrender:v2
-            ${{ secrets.DOCKER_USERNAME }}/aulaapionrender:${{ github.run_number }}
+            luisgustavm54/aulaapionrender:latest
+            luisgustavm54/aulaapionrender:v2
+            luisgustavm54/aulaapionrender:${{ github.run_number }}
