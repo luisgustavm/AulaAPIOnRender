@@ -30,7 +30,7 @@ builder.Services.AddOpenApi(options =>
 
         document.Servers.Add(new OpenApiServer
         {
-            Url = "https://aulaapionrender.onrender.com"
+            Url = "https://aulaapionrender-latest.onrender.com"
         });
 
         return Task.CompletedTask;
